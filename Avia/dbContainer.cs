@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 using System.Threading.Tasks;
 
 namespace Avia
@@ -10,7 +11,7 @@ namespace Avia
     {
         public static string getAdminString()
         {
-            return "Server=den1.mssql7.gear.host; Database = aviaBase; Username = aviabase; Password = Pj2t6!~b82i3";
+            return ConfigurationManager.ConnectionStrings["adminConnectionString"].ConnectionString; ;
         }
     }
 }
