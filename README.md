@@ -9,8 +9,11 @@ erDiagram
         string patronymic
         string passportSeries
         string passportNumber
+    }
+
+    USERLOGIN {
+        string email PK
         string hashedPassword
-        string email
     }
 
     AIRLINE {
@@ -57,6 +60,7 @@ erDiagram
     BOOKING_STATUSES ||--o{ BOOKING : "of"
     FLIGHT_STATUSES ||--o{ FLIGHT : "of"
     USER ||--o{ FAVORITE_FLIGHT : "has"
+    USERLOGIN ||--|| USER : "has"
     AIRLINE ||--o{ FLIGHT : "operates"
     FLIGHT ||--o{ BOOKING : "is booked in"
     FLIGHT ||--o{ FAVORITE_FLIGHT : "is favorited in"
